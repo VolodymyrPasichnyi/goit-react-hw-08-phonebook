@@ -1,31 +1,37 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "redux/operations";
-import { selectError, selectIsLoading } from "redux/selectors";
-import { ContactForm } from "./ContactForm/ContactForm";
-import { ContactList } from "./ContactsList/ContactList";
-import { Filter } from "./Filter/Filter";
+import { Route, Routes } from "react-router"
+import Home from "pages/Home/Home"
+import Register from "pages/Register/Register"
+import Login from "pages/Login/Login"
+import Contacts from "pages/Contacts/Contacts"
 
 
 export const App = () => {
-  const isLoading = useSelector(selectIsLoading)
-  const error = useSelector(selectError)
-  const dispatch = useDispatch()
+  // const isLoading = useSelector(selectIsLoading)
+  // const error = useSelector(selectError)
+  // const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(fetchContacts())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchContacts())
+  // }, [dispatch])
 
 
   return (
-      <div>
-        <h2>Phonebook</h2>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-        {isLoading && !error && <p>Loading...</p>}
-      </div>
+    <div>
+      <Routes>
+        <Route exact path='/' element={Home}/>
+        <Route path='/register' element={Register}/>
+        <Route path='/login' element={Login}/>
+        <Route path='/contacts' element={Contacts}/>
+      </Routes>
+    </div>
+      // <div>
+      //   <h2>Phonebook</h2>
+      //   <ContactForm />
+      //   <h2>Contacts</h2>
+      //   <Filter />
+      //   <ContactList />
+      //   {isLoading && !error && <p>Loading...</p>}
+      // </div>
   )
 }
 
