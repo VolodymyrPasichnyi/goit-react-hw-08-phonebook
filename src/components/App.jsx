@@ -18,20 +18,12 @@ export const App = () => {
   return (
     <div>
       <Routes>
-        <Route exact path='/' element={Home}/>
-        <Route path='/register' element={Register}/>
-        <Route path='/login' element={Login}/>
-        <Route path='/contacts' element={Contacts}/>
+        <Route exact path='/' element={<Home />}/>
+        <Route path='/register' element={<Register />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/contacts' element={<Contacts />}/>
       </Routes>
     </div>
-      // <div>
-      //   <h2>Phonebook</h2>
-      //   <ContactForm />
-      //   <h2>Contacts</h2>
-      //   <Filter />
-      //   <ContactList />
-      //   {isLoading && !error && <p>Loading...</p>}
-      // </div>
   )
 }
 

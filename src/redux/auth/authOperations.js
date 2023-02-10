@@ -16,7 +16,7 @@ export const register = createAsyncThunk(
     }    
 })
 
-export const login = createAsyncThunk(
+export const logIn = createAsyncThunk(
     'auth/login', 
     async credinteals => {
     try {
@@ -27,7 +27,7 @@ export const login = createAsyncThunk(
     }    
 })
 
-export const logout = createAsyncThunk(
+export const logOut = createAsyncThunk(
     'auth/logout', 
     async credinteals => {
     try {

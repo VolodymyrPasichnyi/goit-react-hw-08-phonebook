@@ -10,6 +10,17 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const handleChange = ({target}) => {
+        const { name, value } = target
+        if(name === 'email') {
+            setEmail(value)
+        } else if (name === 'name') {
+            setName(value)
+        } else {
+            setPassword(value)
+        }
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -26,16 +37,22 @@ const Register = () => {
                 <input 
                     type="text"
                     name="name"
+                    value={name}
+                    onChange={handleChange}
                 />
                 <label>Email</label>
                 <input
                     type="text"
                     name="email"
+                    value={email}
+                    onChange={handleChange}
                 />
                 <label>Password</label>
                 <input
-                    type="text"
+                    type="password"
                     name="password"
+                    value={password}
+                    onChange={handleChange}
                 />
                 <button type="submit">Submit</button>
             </form>
