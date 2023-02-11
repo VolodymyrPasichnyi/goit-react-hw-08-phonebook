@@ -4,16 +4,17 @@ import Register from "pages/Register/Register"
 import Login from "pages/Login/Login"
 import Contacts from "pages/Contacts/Contacts"
 import { Navigation } from "./Navigation/Navigation"
+import { useDispatch } from "react-redux"
+import { useEffect } from "react"
+import { fetchCurrentUser } from "redux/auth/authOperations"
 
 
 export const App = () => {
-  // const isLoading = useSelector(selectIsLoading)
-  // const error = useSelector(selectError)
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts())
-  // }, [dispatch])
+  useEffect(() => {
+    dispatch(fetchCurrentUser())
+  }, [dispatch])
 
 
   return (
