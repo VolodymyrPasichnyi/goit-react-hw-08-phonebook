@@ -1,8 +1,12 @@
-import { Route } from "react-router"
+import { useSelector } from "react-redux"
+import { Navigate } from "react-router-dom"
+import { selectToken } from "redux/auth/authSelector"
 
 
-export const PrivateRoute = (props) => {
+
+export const PrivateRoute = ({ children }) => {
+    const isRegister = useSelector(selectToken)
     return (
-        <Route {...props} />
+        !isRegister ? <Navigate to={'/'}/> : children
     )
 }
