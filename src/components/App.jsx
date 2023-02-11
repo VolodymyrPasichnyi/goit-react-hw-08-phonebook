@@ -3,6 +3,7 @@ import Home from "pages/Home/Home"
 import Register from "pages/Register/Register"
 import Login from "pages/Login/Login"
 import Contacts from "pages/Contacts/Contacts"
+import { Navigation } from "./Navigation/Navigation"
 
 
 export const App = () => {
@@ -18,10 +19,13 @@ export const App = () => {
   return (
     <div>
       <Routes>
-        <Route exact path='/' element={<Home />}/>
-        <Route path='/register' element={<Register />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/contacts' element={<Contacts />}/>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />}/>
+          <Route path='/register' element={<Register />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/contacts' element={<Contacts />}/>
+        </Route>
+
       </Routes>
     </div>
   )

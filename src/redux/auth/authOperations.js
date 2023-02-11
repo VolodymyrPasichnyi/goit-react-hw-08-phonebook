@@ -4,12 +4,22 @@ import axios from "axios";
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com'
 
+export const token = {
+    set(token) {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`
+    },
+    unset() {
+        axios.defaults.headers.common.Authorization = ''
+    }
+} 
+
 
 export const register = createAsyncThunk(
     'auth/register', 
     async (credinteals, thunkAPI) => {
     try {
         const { data } = await axios.post('/users/signup', credinteals)
+        token.set(data.token)
         return data
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
@@ -21,6 +31,7 @@ export const logIn = createAsyncThunk(
     async (credinteals, thunkAPI) => {
     try {
         const { data } = await axios.post('/users/login', credinteals)
+        token.set(data.token)
         return data
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
@@ -29,9 +40,10 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk(
     'auth/logout', 
-    async (credinteals, thunkAPI) => {
+    async (_, thunkAPI) => {
     try {
-        const { data } = await axios.post('/users/logout', credinteals)
+        const { data } = await axios.post('/users/logout')
+        token.unset()
         return data
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
