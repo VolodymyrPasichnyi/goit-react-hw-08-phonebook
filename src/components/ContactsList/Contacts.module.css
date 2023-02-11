@@ -1,7 +1,9 @@
 .div {
     display: flex;
-    padding: 5px;
-}
+    justify-content: space-between;
+    width: 340px;
+    align-items: center;
+  }
 
 .name {
     font-size: 15px;

@@ -1,8 +1,10 @@
+import css from '../Home/Home.module.css'
+
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome to Home</h1>
+        <div className={css.div}>
+            <h1>Welcome to Phonebook</h1>
         </div>
     )
 }
