@@ -13,3 +13,26 @@ export const store = configureStore({
 })
 
 
+// const persistConfig = {
+//     key: 'contact',
+//     storage,
+//     blacklist: ['filter'],
+//   }
+  
+//   const persistedReducer = persistReducer(persistConfig, contactsSlice.reducer)
+  
+//   export const store = configureStore({
+//       reducer: {
+//           contacts: persistedReducer,
+//       },
+//       middleware: getDefaultMiddleware =>
+//               getDefaultMiddleware({
+//                   serializableCheck: {
+//                       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER] 
+//                   }
+//               })
+//   })
+  
+  
+//   export const persist = persistStore(store)
+

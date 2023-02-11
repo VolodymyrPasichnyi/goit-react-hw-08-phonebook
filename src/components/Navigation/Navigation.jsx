@@ -4,7 +4,7 @@
 import { StyledLink } from "./Layout.styled"
 
 
-export const Layout = () => {
+export const Navigation = () => {
     return (
     <>
       <header>
