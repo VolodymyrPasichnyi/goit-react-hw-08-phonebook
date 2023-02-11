@@ -28,7 +28,7 @@ export const App = () => {
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/contacts' element={<PrivateRoute><Contacts /></PrivateRoute>}/>
-          <Route path='*' element={isAuth ? <}/>
+          <Route path='*' element={isAuth ? <Contacts/> : <Login/>}/>
         </Route>
       </Routes>
     </div>
