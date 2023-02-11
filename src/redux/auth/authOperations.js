@@ -13,7 +13,6 @@ export const token = {
     }
 } 
 
-
 export const register = createAsyncThunk(
     'auth/register', 
     async (credinteals, thunkAPI) => {
@@ -50,8 +49,6 @@ export const logOut = createAsyncThunk(
     }    
 })
 
-
-
 export const fetchCurrentUser = createAsyncThunk(
     'auth/refresh', 
     async(_, thunkAPI) => {
@@ -69,8 +66,3 @@ export const fetchCurrentUser = createAsyncThunk(
             return thunkAPI.rejectWithValue(error.message)
         }
     })
-
-
-
-
-    

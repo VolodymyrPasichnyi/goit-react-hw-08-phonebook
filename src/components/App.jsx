@@ -3,11 +3,12 @@ import { Navigation } from "./Navigation/Navigation"
 import { useDispatch } from "react-redux"
 import { lazy, useEffect } from "react"
 import { fetchCurrentUser } from "redux/auth/authOperations"
+import { PrivateRoute } from "./PrivateRoute/PrivateRoute"
 
 const Home = lazy(() => import('../pages/Home/Home'))
-const Register = lazy(() => import('../pages/Home/Home'))
-const Home = lazy(() => import('../pages/Home/Home'))
-const Home = lazy(() => import('../pages/Home/Home'))
+const Register = lazy(() => import('../pages/Register/Register'))
+const Login = lazy(() => import('../pages/Login/Login'))
+const Contacts = lazy(() => import('../pages/Contacts/Contacts'))
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -24,8 +25,11 @@ export const App = () => {
           <Route index element={<Home />}/>
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
-          <Route path='/contacts' element={<Contacts />}/>
-        </Route>
+          <PrivateRoute path='/contacts'>
+            <Contacts/>
+          </PrivateRoute>
+          </Route>
+        
 
       </Routes>
     </div>

@@ -14,9 +14,9 @@ export const Navigation = () => {
       <header>
         <nav >
           <StyledLink to='/'>Home</StyledLink >  
+          <StyledLink to='/contacts'>Contacts</StyledLink >
           {isLoggedIn ? 
             <div>
-              <StyledLink to='/contacts'>Contacts</StyledLink >
               <UserMenu/>
             </div> 
             : <div>
