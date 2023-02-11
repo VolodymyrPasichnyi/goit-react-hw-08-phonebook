@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router"
-import Home from "pages/Home/Home"
-import Register from "pages/Register/Register"
-import Login from "pages/Login/Login"
-import Contacts from "pages/Contacts/Contacts"
 import { Navigation } from "./Navigation/Navigation"
 import { useDispatch } from "react-redux"
-import { useEffect } from "react"
+import { lazy, useEffect } from "react"
 import { fetchCurrentUser } from "redux/auth/authOperations"
 
+const Home = lazy(() => import('../pages/Home/Home'))
+const Register = lazy(() => import('../pages/Home/Home'))
+const Home = lazy(() => import('../pages/Home/Home'))
+const Home = lazy(() => import('../pages/Home/Home'))
 
 export const App = () => {
   const dispatch = useDispatch()
