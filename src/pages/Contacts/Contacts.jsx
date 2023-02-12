@@ -10,7 +10,7 @@ const Contacts = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchContacts)
+        dispatch(fetchContacts())
     }, [dispatch])
 
     return (

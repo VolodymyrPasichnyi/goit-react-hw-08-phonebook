@@ -5,6 +5,6 @@ import { selectToken } from "redux/auth/authSelector"
 
 export const PrivateRoute = ({ children }) => {
     const isAuth = useSelector(selectToken)
-    if(!isAuth) return <Navigate to={'/'}/>
+    if(!isAuth) return <Navigate to={'/login'}/>
     return children
 }
