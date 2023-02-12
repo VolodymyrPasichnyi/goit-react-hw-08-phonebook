@@ -14,15 +14,15 @@ export const Navigation = () => {
     <>
       <header className={css.header}>
         <nav >
-          <StyledLink to='/'>Home</StyledLink >  
+          <StyledLink to='/' className={css.link}>Home</StyledLink >  
           {isLoggedIn ? 
             <div>
-              <StyledLink to='/contacts'>Contacts</StyledLink >
+              <StyledLink to='/contacts' className={css.link}>Contacts</StyledLink >
               <UserMenu/>
             </div> 
             : <div>
-              <StyledLink to='/register' >Sign up</StyledLink > 
-              <StyledLink to='/login'>Log in</StyledLink >
+              <StyledLink to='/register' className={css.link} >Sign up</StyledLink > 
+              <StyledLink to='/login' className={css.link}>Log in</StyledLink >
             </div>
             }
         </nav>

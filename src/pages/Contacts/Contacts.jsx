@@ -15,7 +15,6 @@ const Contacts = () => {
 
     return (
         <div>
-            <h2>Phonebook</h2>
             <ContactForm/>
             <Filter/>
             <ContactList/>

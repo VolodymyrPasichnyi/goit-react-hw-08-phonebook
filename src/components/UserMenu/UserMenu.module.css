@@ -1,23 +1,11 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
+.div {
+  text-align: center;
 }
 
-.label {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem auto;
-  align-items: center;
-  font-size: large;
-  text-align: left;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-}
-
-.formBtn {
+.btn {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+  align-items: right;
   background-color: rgba(23, 26, 32, 0.8);
   border: none;
   border-radius: 6px;
@@ -29,7 +17,7 @@
   line-height: 20px;
   margin-left: 8px;
   margin-right: 6px;
-  min-width: 185px;
+  min-width: 50px;
   padding: 0 16px 0 16px;
   color: white;
   cursor: pointer;

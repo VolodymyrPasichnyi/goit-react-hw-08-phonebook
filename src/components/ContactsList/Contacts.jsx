@@ -8,10 +8,10 @@ export const Contacts = ({ name, number, id }) => {
     const dispatch = useDispatch()
 
     return (
-        <div className={css.div}>
+        <div className={css.contactList}>
             <p className={css.name}>{name}: {number}</p>
             <button 
-                className={css.button} onClick={() => dispatch(deleteContacts(id))}>Delete</button>
+                className={css.Btn} onClick={() => dispatch(deleteContacts(id))}>Delete</button>
         </div>    
     )
 }
