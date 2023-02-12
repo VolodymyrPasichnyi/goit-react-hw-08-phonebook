@@ -8,6 +8,7 @@ const authSlice = createSlice({
         user: { name: null, email: null },
         token: null,
         isLoggedIn: false,
+        isCurrentUser: false,
     },
     extraReducers: builder => {
         builder
@@ -26,9 +27,16 @@ const authSlice = createSlice({
                 state.token = null
                 state.isLoggedIn = false
             })
+            .addCase(fetchCurrentUser.pending, (state) => {
+                state.isCurrentUser = true
+            }) 
             .addCase(fetchCurrentUser.fulfilled, (state, {payload}) => {
                 state.user = payload
                 state.isLoggedIn = true
+                state.isCurrentUser = false
+            })
+            .addCase(fetchCurrentUser.rejected, (state) => {
+                state.isCurrentUser = false
             })
     }
 })

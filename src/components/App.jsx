@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { lazy, useEffect } from "react"
 import { fetchCurrentUser } from "redux/auth/authOperations"
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute"
-import { selectToken } from "redux/auth/authSelector"
+import { selectCurrentUser, selectToken } from "redux/auth/authSelector"
 import { PublicRoute } from "./PublicRoute/PublicRoute"
 
 
@@ -15,7 +15,7 @@ const Contacts = lazy(() => import('../pages/Contacts/Contacts'))
 
 export const App = () => {
   const dispatch = useDispatch()
-  const isAuth = useSelector(selectToken)
+  const isAuth = useSelector(selectCurrentUser)
 
   useEffect(() => {
     dispatch(fetchCurrentUser())
