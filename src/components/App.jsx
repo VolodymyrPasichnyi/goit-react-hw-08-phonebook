@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { lazy, useEffect } from "react"
 import { fetchCurrentUser } from "redux/auth/authOperations"
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute"
-import { selectCurrentUser, selectToken } from "redux/auth/authSelector"
+import { selectCurrentUser } from "redux/auth/authSelector"
 import { PublicRoute } from "./PublicRoute/PublicRoute"
 
 

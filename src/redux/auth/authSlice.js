@@ -31,7 +31,7 @@ const authSlice = createSlice({
                 state.isCurrentUser = true
             }) 
             .addCase(fetchCurrentUser.fulfilled, (state, {payload}) => {
-                state.user = payload
+                state.user = {...payload}
                 state.isLoggedIn = true
                 state.isCurrentUser = false
             })

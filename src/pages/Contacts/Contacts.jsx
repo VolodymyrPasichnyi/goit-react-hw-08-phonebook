@@ -3,7 +3,7 @@ import { ContactList } from "components/ContactsList/ContactList"
 import { Filter } from "components/Filter/Filter"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { fetchContacts } from "redux/operations"
+import { fetchContacts } from "redux/contacts/operations"
 
 
 const Contacts = () => {
